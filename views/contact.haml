@@ -1,0 +1,53 @@
+%section.module.module-parallax.bg-dark-30{"data-background" => "assets/images/section-9.jpg"}
+  .container
+    .row
+      .col-sm-12.text-center
+        %h1.mh-line-size-3.font-alt.m-b-20 Contact us
+%section.module.bottom
+  .container
+    - if @success_message
+      .row
+        .col-sm-12
+          %h2
+            #success{:style => "border: 2px solid green;background-color:green;margin-top: 50px;text-align: center;color: white;"}
+    .row
+      .col-sm-6.col-sm-offset-3
+        %h2.module-title.font-alt Get In Touch
+        .module-subtitle.font-serif
+          Feel free to reach us for any questions you may have regarding our services.
+    .row
+      .col-sm-6.col-sm-offset-1
+        %form#contact_form.contact-form{:action => "/contact", :method => "post", :novalidate => "novalidate"}
+          .form-group
+            %label.sr-only{:for => "cname"} Name
+            %input#cname.form-control{"data-validation-required-message" => "Please enter your name.", :name => "cname", :placeholder => "Name*", :required => "", :type => "text"}/
+            %p.help-block.text-danger
+          .form-group
+            %label.sr-only{:for => "cemail"} Your Email
+            %input#cemail.form-control{"data-validation-required-message" => "Please enter your email address.", :name => "cemail", :placeholder => "Your E-mail*", :required => "", :type => "email"}/
+          .form-group
+            %label.sr-only{:for => "cphone"} Your Phone
+            %input#cemail.form-control{"data-validation-required-message" => "Please enter your email address.", :name => "cphone", :placeholder => "Your Phone", :required => "", :type => "phone"}/
+            %p.help-block.text-danger
+          .form-group
+            %textarea#cmessage.form-control{"data-validation-required-message" => "Please enter your message.", :name => "cmessage", :placeholder => "Message*", :required => "", :rows => "7"}
+            %p.help-block.text-danger
+          .text-center
+            %button.btn.btn-block.btn-round.btn-d{:type => "submit"} Submit
+        / Ajax response
+        #contact-response.ajax-response.font-alt
+      .col-sm-4
+        / ALT CONTENT BOX
+        .alt-content-box.m-t-0.m-t-sm-30
+          .alt-content-box-icon
+            %span.icon-envelope
+          %h5.alt-content-box-title.font-alt
+            Contact us
+          %a{:href => "mailto:aes@olp.net"}aes@olp.net
+
+        .alt-content-box
+          .alt-content-box-icon
+            %span.icon-map
+          %h5.alt-content-box-title.font-alt
+            Location
+          All Element Solutions<br>14989 S Grant St<br>Bixby, Oklahoma - 74008
